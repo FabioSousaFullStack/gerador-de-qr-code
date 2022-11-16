@@ -7,7 +7,7 @@ import (
     "net/http"
 )
 
-var addr = flag.String("addr", ":1718", "http service address") // Q=17, R=18
+var addr = flag.String("addr", ":8000", "http service address") // Q=17, R=18
 
 var templ = template.Must(template.New("qr").Parse(templateStr))
 
@@ -21,7 +21,7 @@ func main() {
 }
 
 func QR(w http.ResponseWriter, req *http.Request) {
-    templ.Execute(w, req.FormValue("s"))
+    templ.Execute(w, req.FormValue("input_formulario_qr_code"))
 }
 
 const templateStr = `
