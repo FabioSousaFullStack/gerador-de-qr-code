@@ -13,23 +13,23 @@ Ou
 
 E rode com o comando: go run main.go
 
-# Aprendizados
+## Aprendizados
 
-## Consumo de API
+### Consumo de API
 
 - Utilização da API para geração do qr code.
 
 
-## Criação de executáveis
+### Criação de executáveis
 
 - Utilização do build na montagem do exe do 
 Go.
 
-## Como subir um servidor em Go
+### Como subir um servidor em Go
 
 - Utilização do net/http;
 
-## Utilização dos seguintes pacotes
+### Utilização dos seguintes pacotes
     flag
     html/template
     log
