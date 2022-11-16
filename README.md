@@ -1,6 +1,6 @@
 # Gerador de Qr Code
 
-![Qr Code](qrcode.PNG)
+![Qr Code](qrcode.png)
 
 ## Modo de uso.
 O executável pode ser encontrado em: 
