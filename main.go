@@ -5,6 +5,7 @@ import (
     "html/template"
     "log"
     "net/http"
+    "fmt"
 )
 
 var addr = flag.String("addr", ":8000", "http service address") // Q=17, R=18
@@ -12,6 +13,15 @@ var addr = flag.String("addr", ":8000", "http service address") // Q=17, R=18
 var templ = template.Must(template.New("qr").Parse(templateStr))
 
 func main() {
+
+    fmt.Println("******************************************************************************")
+    fmt.Println("----------------------------Instruções de uso----------------------------------")
+    fmt.Println("******************************************************************************")
+    fmt.Println("")
+    fmt.Println("Abra seu navegador em http://localhost:8000 , para usar seu gerador de qr code.")
+    fmt.Println("")
+
+
     flag.Parse()
     http.Handle("/", http.HandlerFunc(QR))
     err := http.ListenAndServe(*addr, nil)
@@ -34,9 +44,9 @@ const templateStr = `
 
 
 
-<body>
+<body style="background-image: linear-gradient(white, blue);">
 <div class="d-flex  justify-content-center rounded-3">
-<div class="card  d-flex " style="width: 22rem;">
+<div class="card  d-flex " style="width: 22rem; margin:5em;">
 {{if .}}
 <img src="http://chart.apis.google.com/chart?chs=300x300&cht=qr&choe=UTF-8&chl={{.}}" />
   <div class="card-body">
@@ -44,7 +54,7 @@ const templateStr = `
     <h5 class="fs-6">{{.}}</h5>
     <form class="d-flex flex-column  justify-content-center" action="/" name=f method="POST">  
 
-    <input class="mb-4"  name=s value="" title="Text to QR Encode">
+    <input class="mb-4"  name=input_formulario_qr_code placeholder="Digite a informação do qr code" value="" title="Text to QR Encode">
    
     <input class="btn btn-primary "type=submit value="Gerar QR" name=qr>
 </form>
