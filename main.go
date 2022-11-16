@@ -15,10 +15,10 @@ var templ = template.Must(template.New("qr").Parse(templateStr))
 func main() {
 
     fmt.Println("******************************************************************************")
-    fmt.Println("----------------------------Instruções de uso----------------------------------")
+    fmt.Println("---------------------------------Gerador De Qr Code-----------------------------")
     fmt.Println("******************************************************************************")
     fmt.Println("")
-    fmt.Println("Abra seu navegador em http://localhost:8000 , para usar seu gerador de qr code.")
+    fmt.Println(" Abra seu navegador em http://localhost:8000 , para usar seu gerador de qr code.")
     fmt.Println("")
 
 
